@@ -3,8 +3,8 @@
 /*When doing these tasks, we recommend using console.log to test the output of your code to make sure it works correctly.*/
 
 ///////////////Menu Items (MVP)///////////////////
-const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
+// const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
+// const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1a: Make a function that builds objects🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Add to the function createMenuItems below so it will create objects following the same format found above for latte and breakfastBurrito (name, price, category).  
@@ -82,7 +82,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 // no grade
-console.log(reviews[5])
+// console.log(reviews[5])
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -90,12 +90,12 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-//dog eye color
-console.log(reviews.length -1)
+//like the dog eye color problem
+// console.log(reviews.length -1)
 
-reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
-console.log(reviews[7])
+console.log(reviews[7]);
 
 
 
@@ -108,10 +108,12 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 //params = array, name, rating, feedback
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
-  //array.push
+
+function addReview(array, name, rating, feedback){
+  array.push(name, rating, feedback);
+  return array;
 }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -124,11 +126,11 @@ Use the getReviewByIndex function below to do the following:
 */
 
 //array and number
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, number) {
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`
   //return a string "{name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
 }
-
+console.log(getReviewByIndex(reviews, 0))
 
   
 
@@ -145,10 +147,10 @@ Use the getLastReview function below to do the following:
 
 //array
 //array[array.length]
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}`
 } 
-
+console.log(getLastReview(reviews))
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
@@ -179,7 +181,7 @@ Use the getLongReviews function below to do the following:
 
   For example: getLongReviews(reviews) would return:
   [
-    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
+    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly recommend."},
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }
   ]
